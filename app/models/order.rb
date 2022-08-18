@@ -13,6 +13,10 @@ class Order < ApplicationRecord
 
     event :pay do
       transitions from: [:pending, :failed], to: :paid
+
+      after do
+        user.update(role: 'vip')
+      end
     end
 
     event :fail do
