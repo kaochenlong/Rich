@@ -14,6 +14,8 @@ class ArticlesController < ApplicationController
   def create
     @article = current_user.articles.new(article_params)
 
+    authorize @article
+
     if @article.save
       redirect_to blogs_path(handler: current_user.blog.handler), notice: "文章新增成功"
     else

@@ -32,6 +32,7 @@ gem "kaminari", "~> 1.2"
 gem "aasm", "~> 5.3"
 gem "braintree", "~> 4.8.0"
 gem "image_processing", "~> 1.12"
+gem "pundit", "~> 2.2"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
