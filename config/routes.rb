@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   resource :plans, only: [:show]
   resources :orders, except: [:edit, :update, :destroy] do
     member do
+      get :pay
+      post :pay, action: "submit_payment"
       delete :cancel
     end
   end
