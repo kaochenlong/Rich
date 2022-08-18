@@ -50,9 +50,9 @@ class OrdersController < ApplicationController
   def gateway
     Braintree::Gateway.new(
       environment: :sandbox,
-      merchant_id: '',
-      public_key: '',
-      private_key: '',
+      merchant_id: ENV['MERCHANT_ID'],
+      public_key: ENV['PUBLIC_KEY'],
+      private_key: ENV['PRIVATE_KEY'],
     )
   end
 end
