@@ -12,6 +12,10 @@
   </div>
 
   <div>
+    封面照片：<%= form.file_field :cover_image %>
+  </div>
+
+  <div>
     發佈日期：<%= form.text_field :publish_at, data: {
       controller: "datepicker"
     } %>
