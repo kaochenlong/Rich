@@ -1,0 +1,17 @@
+.gray-rounded-border {
+  @apply border border-gray-500 rounded;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  @apply gray-rounded-border m-1;
+}
+
+input[type="submit"] {
+  @apply px-3 py-2 gray-rounded-border;
+}
+
+textarea {
+  @apply gray-rounded-border m-1;
+}

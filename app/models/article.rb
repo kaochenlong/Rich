@@ -1,6 +1,7 @@
 class Article < ApplicationRecord
   acts_as_paranoid
   has_one_attached :cover_image
+  acts_as_taggable_on :tags
 
   # relationships
   belongs_to :user
