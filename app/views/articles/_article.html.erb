@@ -1,0 +1,11 @@
+<li>
+  <section class="p-3 mb-4 bg-gray-50">
+    封面圖
+    <%= image_tag article.cover_image.variant(resize_to_limit: [200, 200]) if article.cover_image.attached? %>
+    <h2 class="text-xl"><%= article.title %></h2>
+    <article class="text-sm">
+      <%= article.content.truncate(100) %>
+      ...繼續閱讀
+    </article>
+  </section>
+</li>

@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show, :unlock]
+  before_action :authenticate_user!, except: [:index, :show, :unlock, :search]
   before_action :find_user_article, only: [:edit, :update, :destroy]
   before_action :find_article, only: [:show, :unlock]
 
@@ -51,6 +51,10 @@ class ArticlesController < ApplicationController
     else
       redirect_to article_path(@article), notice: "密碼錯誤"
     end
+  end
+
+  def search
+    @articles = Article.search(params[:keyword])
   end
 
   private
